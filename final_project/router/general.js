@@ -68,7 +68,7 @@ public_users.get('/review/:isbn',function (req, res) {
     function getValueByKey(object, row) {
       return object[row];
     }
-    const bookByIsbn = getValueByKey(result, isbnName).review;
+    const bookByIsbn = getValueByKey(result, isbnName).reviews;
     res.send(bookByIsbn);
   });
 });
