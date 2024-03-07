@@ -25,9 +25,12 @@ public_users.post("/register", (req,res) => {
 });
 
 public_users.get('/',function (req, res) {
-  res.send(JSON.stringify(books));
-  return res.status(200).json({message: "Books list"});
+  getBooksArray.then(result => {
+    const booksArray = JSON.stringify(result);
+    res.send(booksArray);
+  });
 });
+
 
 public_users.get('/isbn/:isbn',function (req, res) {
   const isbnName = req.params.isbn;
